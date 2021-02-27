@@ -1,7 +1,9 @@
+const ESLintPlugin = require("eslint-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/App.js",
+  entry: ["@babel/polyfill", "./src/App.js"],
+
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
@@ -31,4 +33,6 @@ module.exports = {
       },
     ],
   },
+
+  plugins: [new ESLintPlugin()],
 };

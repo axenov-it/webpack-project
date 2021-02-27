@@ -1,3 +1,5 @@
-body {
-  background: yellow;
+.container,
+.page__title {
+  max-width: 1000px;
+  margin: auto;
 }
