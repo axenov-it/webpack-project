@@ -4,6 +4,8 @@ import "./renderPosts.css";
 
 const renderPosts = async () => {
   const container = document.querySelector("#app");
+  const postsBlock = document.createElement("div");
+  postsBlock.className = "posts";
 
   const posts = await getPosts();
 
@@ -11,17 +13,18 @@ const renderPosts = async () => {
     const wrap = document.createElement("div");
 
     const html = `
-                  <h2 class="post__title">${post.title}</h2>
-                  <p class="post__description">${post.short_description}</p>
+                  <h2 class="posts__title">${post.title}</h2>
+                  <p class="posts__description">${post.short_description}</p>
               `;
 
-    wrap.className = "post";
+    wrap.className = "posts__post";
     wrap.innerHTML = html;
 
     return wrap;
   });
 
-  container.append(...dataHtml);
+  postsBlock.append(...dataHtml);
+  container.appendChild(postsBlock);
 };
 
 export default renderPosts;

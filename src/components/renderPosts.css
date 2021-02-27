@@ -1,0 +1,19 @@
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.posts__post {
+  width: 30%;
+  height: 200px;
+  margin: 15px;
+  text-align: center;
+  box-shadow: 0 0 4px #000000ad;
+}
+
+.posts__title {
+  background: gainsboro;
+  padding: 5px 0;
+  margin: 0;
+}
