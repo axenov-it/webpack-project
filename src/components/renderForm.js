@@ -1,4 +1,6 @@
-//import Post from "../elements/Post";
+import { addPost } from "../requests";
+import Form from "../elements/Form";
+import Post from "../elements/Post";
 
 import "./renderForm.css";
 
@@ -6,19 +8,23 @@ const renderForm = async () => {
   const container = document.querySelector("body");
   const btnAdd = document.querySelector("#add-post");
 
-  btnAdd.onclick = function () {
-    console.log("helloo render form");
+  const addPostHandler = async ({ fields, onClose }) => {
+    const result = await addPost(fields);
+
+    const postsContainer = document.querySelector(".posts");
+
+    postsContainer.prepend(new Post(result.post));
+
+    postsContainer.lastChild.remove();
+
+    onClose();
   };
 
-  //   const postsBlock = document.createElement("div");
-  //   postsBlock.className = "posts";
-
-  //   const posts = await getPosts();
-
-  //   const dataHtml = posts.map((post) => new Post(post));
-
-  //   postsBlock.append(...dataHtml);
-  //   container.appendChild(postsBlock);
+  btnAdd.onclick = function () {
+    container.appendChild(
+      new Form({ title: "Create post", onSubmitHandler: addPostHandler })
+    );
+  };
 };
 
 export default renderForm;

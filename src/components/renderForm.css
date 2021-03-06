@@ -1,0 +1,43 @@
+.form {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #dddddd87;
+  z-index: 1000;
+}
+
+.form__container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 10%;
+  background: #fff;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  box-shadow: 0 0 5px 1px #00000075;
+  position: relative;
+}
+
+.form__item {
+  margin-bottom: 15px;
+}
+
+.form__header {
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+}
+
+.form__del {
+  position: absolute;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  right: 5px;
+  top: 5px;
+  padding: 2px 5px;
+  display: block;
+}
