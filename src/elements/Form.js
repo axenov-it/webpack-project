@@ -5,7 +5,7 @@ function Form(prams) {
   wrap.className = "form";
 
   const html = `<form class="form__container">
-                    <span class="form__del">x</span>
+                    <span class="del">x</span>
                     <h3 class="form__header">${title}</h3>
                     <input name="title" class="form__item" type="text" placeholder="Enter post name" />
                     <textarea
@@ -21,7 +21,7 @@ function Form(prams) {
 
   const onClose = () => wrap.remove();
 
-  wrap.querySelector(".form__del").onclick = onClose;
+  wrap.querySelector(".del").onclick = onClose;
 
   wrap.querySelector(".form__container").onsubmit = function (e) {
     e.preventDefault();
