@@ -1,5 +1,5 @@
-function Form(prams) {
-  const { title, onSubmitHandler } = prams;
+function Form(params) {
+  const { title, onSubmitHandler } = params;
 
   const wrap = document.createElement("div");
   wrap.className = "form";

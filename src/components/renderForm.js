@@ -15,8 +15,6 @@ const renderForm = async () => {
 
     postsContainer.prepend(new Post(result.post));
 
-    postsContainer.lastChild.remove();
-
     onClose();
   };
 
