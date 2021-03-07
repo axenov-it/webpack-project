@@ -1,5 +1,8 @@
 function Form(params) {
-  const { title, onSubmitHandler } = params;
+  const { title, onSubmitHandler, post } = params;
+
+  const inputTitle = post ? post.title : "";
+  const description = post ? post.description : "";
 
   const wrap = document.createElement("div");
   wrap.className = "form";
@@ -7,12 +10,12 @@ function Form(params) {
   const html = `<form class="form__container">
                     <span class="del">x</span>
                     <h3 class="form__header">${title}</h3>
-                    <input name="title" class="form__item" type="text" placeholder="Enter post name" />
+                    <input value="${inputTitle}" name="title" class="form__item" type="text" placeholder="Enter post name" />
                     <textarea
                       name="description"
                       class="form__item"
                       placeholder="Enter post description"
-                    ></textarea>
+                    >${description}</textarea>
                     <button class="form__btn">Send data</button>
                   </form>                
                 `;

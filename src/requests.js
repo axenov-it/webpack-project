@@ -26,6 +26,23 @@ export const addPost = async ({ title, description }) => {
   return result;
 };
 
+export const updatePost = async ({ id, title, description }) => {
+  const response = await fetch(`${BASE_URL}/${id}?api_key=${API_KEY}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      title,
+      seo_url: "",
+      short_description: description,
+      full_description: "",
+      status: 1,
+    }),
+  });
+
+  const result = await response.json();
+
+  return result;
+};
+
 export const removePost = async (postId) => {
   const response = await fetch(`${BASE_URL}/${postId}?api_key=${API_KEY}`, {
     method: "DELETE",
