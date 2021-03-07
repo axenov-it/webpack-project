@@ -30,3 +30,14 @@
 #add-post:hover {
   background: #2b2bbc;
 }
+
+.del {
+  position: absolute;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  right: 5px;
+  top: 5px;
+  padding: 2px 5px;
+  display: block;
+}
